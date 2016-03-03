@@ -1,5 +1,9 @@
 # springboot-sample-app
 
+[![Build Status](https://travis-ci.org/codecentric/springboot-sample-app.svg?branch=master)](https://travis-ci.org/codecentric/springboot-sample-app)
+[![Coverage Status](https://coveralls.io/repos/codecentric/springboot-sample-app/badge.svg?branch=master&service=github)](https://coveralls.io/github/codecentric/springboot-sample-app?branch=master)
+[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 Minimal [Spring Boot](http://projects.spring.io/spring-boot/) sample app.
 
 ## Requirements
