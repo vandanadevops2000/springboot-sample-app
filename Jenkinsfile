@@ -23,7 +23,7 @@ def call(Map pipelineParams) {
             // projectVersion = 'Version'
             artifactType = 'Packaging'
             backupVersionCount = '5'
-            SONARQUBE_SERVER = ''
+            SONARQUBE_SERVER = 'http://54.80.107.116:9000'
             awsCredentials = 'AWS'
             awsRegion = 'us-east-1'
             s3BucketURL = 'shru123'
