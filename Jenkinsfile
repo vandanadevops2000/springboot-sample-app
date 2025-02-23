@@ -1,4 +1,4 @@
-def call(Map pipelineParams) {
+
     pipeline {
         agent any
         tools {
@@ -54,7 +54,7 @@ def call(Map pipelineParams) {
                         }
                     }
                 }
-            }
+            
             // Additional stages can be added here
         }
         // post conditions can be added here
