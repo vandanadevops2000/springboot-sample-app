@@ -15,7 +15,14 @@ def call(Map pipelineParams) {
             timestamps()
             disableConcurrentBuilds()
         }
-        // Add your stages and steps here
+        stages {
+            stage('Stage 1') {
+                steps {
+                    sh 'env | sort'
+                }
+            }
+            // You can add more stages here
+        }
     }
 }
 
