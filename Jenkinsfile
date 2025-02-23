@@ -15,14 +15,49 @@ def call(Map pipelineParams) {
             timestamps()
             disableConcurrentBuilds()
         }
+        environment {
+            repoName = "${pipelineParams.reponame}"
+            branchData = "${env.GIT_BRANCH}"
+            projectArtifactId = 'ArtifactId'
+            projectGroupId = 'GroupId'
+            // projectVersion = 'Version'
+            artifactType = 'Packaging'
+            backupVersionCount = '5'
+            SONARQUBE_SERVER = ''
+            awsCredentials = 'AWS'
+            awsRegion = 'us-east-1'
+            s3BucketURL = 'shru123'
+            developtag = 'latest'
+            awsAccountId = '796973488942'
+            USERNAME = 'vandanadevops2000'
+            PASSWORD = 'Git'
+        }
         stages {
-            stage('Stage 1') {
+            stage("Env Variables") {
                 steps {
-                    sh 'env | sort'
+                    echo "The build number is ${env.BUILD_NUMBER}"
+                    echo "You can also use \${BUILD_NUMBER} -> ${env.BUILD_NUMBER}"
+                    sh 'echo "I can access $BUILD_NUMBER in shell command as well."'
+                    script {
+                        int backupVersion = backupVersionCount.toInteger()
+                        int currentBuildNo = env.BUILD_NUMBER.toInteger()
+                        int artifactDeleteVersion = currentBuildNo - backupVersion
+                        echo "branch is ${branchData}!"
+                        if (branchData.contains("/")) {
+                            def (branchName, branchVersion) = branchData.split("/", 2)
+                            echo "Branch Name is ${branchName}!"
+                            echo "Branch Version is ${branchVersion}!"
+                        } else {
+                            def branchName = branchData
+                            echo "Branch name without version is ${branchName}!"
+                            echo "Branch version not available!"
+                        }
+                    }
                 }
             }
-            // You can add more stages here
+            // Additional stages can be added here
         }
+        // post conditions can be added here
     }
 }
 
