@@ -1,3 +1,3 @@
-def call(String name, String dayofWeek) {
-  sh "echo hello ${name}. Today is ${dayofWeek}."
+def call( Map PipelineParams = [:]) {
+  sh "echo hello ${PipelineParams.name}. Today is ${PipelineParams.dayofWeek}."
 }
