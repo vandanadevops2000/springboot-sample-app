@@ -5,7 +5,7 @@ pipeline {
         stage('hello') {
             steps {
                 script {
-                    helloworld()
+                    helloworld("shruthi","Thursday")
                 }
             }
         }
